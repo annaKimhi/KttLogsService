@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KttLogService", "KttLogService\KttLogService.csproj", "{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "kttLogSetup", "kttLogSetup\kttLogSetup.vdproj", "{3EAF2F2B-4C45-4CD7-871A-30279B16844B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Debug|x86.Build.0 = Debug|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Release|x86.ActiveCfg = Release|Any CPU
+		{1CAF5F5F-1189-4E45-AF7F-24ECC9111BEB}.Release|x86.Build.0 = Release|Any CPU
+		{3EAF2F2B-4C45-4CD7-871A-30279B16844B}.Debug|Any CPU.ActiveCfg = Debug
+		{3EAF2F2B-4C45-4CD7-871A-30279B16844B}.Debug|x86.ActiveCfg = Debug
+		{3EAF2F2B-4C45-4CD7-871A-30279B16844B}.Release|Any CPU.ActiveCfg = Release
+		{3EAF2F2B-4C45-4CD7-871A-30279B16844B}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
