@@ -10,10 +10,10 @@ It retrieves data from clock hardware and sends it to KTT\att_sync.php.
 
 #configuration:
 
-from - date time from when data should be syncronized (i.e. 15/09/2017_00:00)
-ktturi - KTT server address (i.e. http://www.korentec.co.il/kttdebug)
-attip - clock HW machine ip (i.e. 192.168.1.7)
-attport - clock HW machine port (i.e. 4370)
-Command - sync
-lastSync - date time value for last sync time
+1. from - date time from when data should be syncronized (i.e. 15/09/2017_00:00)
+2. ktturi - KTT server address (i.e. http://www.korentec.co.il/kttdebug)
+3. attip - clock HW machine ip (i.e. 192.168.1.7)
+4. attport - clock HW machine port (i.e. 4370)
+5. Command - sync
+6. lastSync - date time value for last sync time
 
