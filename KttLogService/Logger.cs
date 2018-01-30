@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +17,7 @@ namespace KttLogService
         public ILog log;
         private Logger()
         {
-
-            XmlConfigurator.ConfigureAndWatch(new FileInfo("KttLogService.exe.config"));
+            XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.GetDirectoryName(new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath) + "\\KttLogService.exe.config"));
             log = LogManager.GetLogger(typeof(KttLogs));
 
         }

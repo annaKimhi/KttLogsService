@@ -20,17 +20,15 @@ namespace KttLogService
 
                 //string windowsPath = Environment.GetEnvironmentVariable("windir");
                 //windowsPath = windowsPath + "\\SysWOW64";
-
-
                 //Process.Start(windowsPath + "\\regsvr32.exe ", windowsPath + "\\zkemkeeper.dll");
-                //
-                //KttLogs t = new KttLogs();
-                //t.OnStart(null);
-
-                //System.Configuration.Install.AssemblyInstaller Installer = new System.Configuration.Install.AssemblyInstaller("",null);
-                //Installer.UseNewContext = true;
-                //Installer.Install(null);
-                //Installer.Commit(null);
+#if Debug
+                KttLogs t = new KttLogs();
+                t.StartDebug();
+                while (true)
+                {
+                    System.Threading.Thread.Sleep(10000);
+                };
+#endif
 
                 Logger.LoggerInstance.log.Info("Starting AttLogsService");
                 ServiceBase[] ServicesToRun;
@@ -39,10 +37,7 @@ namespace KttLogService
                 new KttLogs()
                 };
 
-                //while (true)
-                //{
-                //    System.Threading.Thread.Sleep(10000);
-                //};
+             
                 ServiceBase.Run(ServicesToRun);
             }
             catch (Exception ex)

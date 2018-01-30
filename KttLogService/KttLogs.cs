@@ -32,6 +32,10 @@ namespace KttLogService
             InitializeComponent();
         }
 
+        internal void StartDebug()
+        {
+            OnStart(null);
+        }
         protected override void OnStart(string[] args)
         {
             try
