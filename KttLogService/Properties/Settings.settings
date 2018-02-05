@@ -8,9 +8,6 @@
     <Setting Name="from" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2017-09-15</Value>
     </Setting>
-    <Setting Name="ktturi" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost/ktt</Value>
-    </Setting>
     <Setting Name="Command" Type="System.String" Scope="User">
       <Value Profile="(Default)">sync</Value>
     </Setting>
@@ -18,7 +15,10 @@
       <Value Profile="(Default)">192.168.1.7</Value>
     </Setting>
     <Setting Name="attport" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">4370</Value>
+    </Setting>
+    <Setting Name="ktturi" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.korentec.co.il/kttdebug</Value>
     </Setting>
   </Settings>
 </SettingsFile>
