@@ -37,10 +37,10 @@ namespace KttLogService.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15/09/2017_00:00")]
-        public string from {
+        [global::System.Configuration.DefaultSettingValueAttribute("2017-09-15")]
+        public global::System.DateTime from {
             get {
-                return ((string)(this["from"]));
+                return ((global::System.DateTime)(this["from"]));
             }
             set {
                 this["from"] = value;
@@ -56,18 +56,6 @@ namespace KttLogService.Properties {
             }
             set {
                 this["ktturi"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4370")]
-        public string attport {
-            get {
-                return ((string)(this["attport"]));
-            }
-            set {
-                this["attport"] = value;
             }
         }
         
@@ -92,6 +80,18 @@ namespace KttLogService.Properties {
             }
             set {
                 this["attip"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string attport {
+            get {
+                return ((string)(this["attport"]));
+            }
+            set {
+                this["attport"] = value;
             }
         }
     }

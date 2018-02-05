@@ -1,7 +1,9 @@
 ﻿using KttLogService;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,20 @@ namespace KttLogService
             try
             {
 
+                Logger.LoggerInstance.log.Info("Starting AttLogsService");
                 //string windowsPath = Environment.GetEnvironmentVariable("windir");
                 //windowsPath = windowsPath + "\\SysWOW64";
                 //Process.Start(windowsPath + "\\regsvr32.exe ", windowsPath + "\\zkemkeeper.dll");
 #if Debug
-                KttLogs t = new KttLogs();
+                //   var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
+                //   System.Configuration.Configuration config =
+                //ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                //   var a = config.AppSettings.Settings["attport"].Value;
+                //   config.AppSettings.Settings["attport"].Value = "4700";
+                //   config.Save(ConfigurationSaveMode.Modified);
+
+                //   Properties.Settings.Default.Save();
+                 KttLogs t = new KttLogs();
                 t.StartDebug();
                 while (true)
                 {
@@ -30,18 +41,19 @@ namespace KttLogService
                 };
 #endif
 
-                Logger.LoggerInstance.log.Info("Starting AttLogsService");
+
                 ServiceBase[] ServicesToRun;
                 ServicesToRun = new ServiceBase[]
                 {
                 new KttLogs()
                 };
 
-             
+
                 ServiceBase.Run(ServicesToRun);
             }
             catch (Exception ex)
             {
+               
                 Logger.LoggerInstance.log.Error($"Failed to start  AttLogsService due to Exception: {ex}");
             }
         }

@@ -15,6 +15,7 @@ namespace KttLogService
     {
         private static Logger _LoggerInstance = new Logger();
         public ILog log;
+       
         private Logger()
         {
             XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.GetDirectoryName(new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath) + "\\KttLogService.exe.config"));

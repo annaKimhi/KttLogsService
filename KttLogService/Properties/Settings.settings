@@ -5,20 +5,20 @@
     <Setting Name="lastSync" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="from" Type="System.String" Scope="User">
-      <Value Profile="(Default)">15/09/2017_00:00</Value>
+    <Setting Name="from" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2017-09-15</Value>
     </Setting>
     <Setting Name="ktturi" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://localhost/ktt</Value>
-    </Setting>
-    <Setting Name="attport" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4370</Value>
     </Setting>
     <Setting Name="Command" Type="System.String" Scope="User">
       <Value Profile="(Default)">sync</Value>
     </Setting>
     <Setting Name="attip" Type="System.String" Scope="User">
       <Value Profile="(Default)">192.168.1.7</Value>
+    </Setting>
+    <Setting Name="attport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000</Value>
     </Setting>
   </Settings>
 </SettingsFile>

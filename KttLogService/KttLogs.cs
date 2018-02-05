@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.ServiceProcess;
@@ -19,12 +20,12 @@ namespace KttLogService
 
         const string SYNC_ACTION = "sync";
         private const string CLEAN_ACTION = "clean";
-        private static string _action = null;
-        private static DateTime _from = new DateTime();
-        private static string _kttUri;
-
-        private static string _attServerIp;//= "192.168.1.7";
-        private static int _attServerPort;// = 4370;
+        private string _action = null;
+        private DateTime _from = new DateTime();
+        private string _kttUri;
+        private const string _dateformat = "d/M/yyyy hh:mm";
+        private string _attServerIp;//= "192.168.1.7";
+        private int _attServerPort;// = 4370;
         private readonly string kttLogsJob = "kttLogsJob";
 
         public KttLogs()
@@ -46,12 +47,13 @@ namespace KttLogService
                 _action = Properties.Settings.Default.Command;
 
                 InitConfigParams();
+                BuildJob();
             }
             catch (Exception ex)
             {
                 Logger.LoggerInstance.log.Error($"Failed to parse args due to Exception: {ex}");
             }
-            BuildJob();
+
         }
 
         private void BuildJob()
@@ -61,7 +63,7 @@ namespace KttLogService
             sched.Start();
 
             IJobDetail job1 = JobBuilder.Create<kttJob>()
-                       .WithIdentity("Job1", "group2")
+                       .WithIdentity("Job1", "group1")
                        .UsingJobData("Action", _action)
                        .UsingJobData("Uri", _kttUri)
                        .UsingJobData("From", _from.ToString())
@@ -69,23 +71,43 @@ namespace KttLogService
                        .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
 
             ITrigger trigger1 = TriggerBuilder.Create()
-                       .WithIdentity("myTrigger1", "group2")                      
+                       .WithIdentity("myTrigger1", "group1")
                        .StartNow()
                        .Build();
 
 
 
-            IJobDetail job2 = JobBuilder.Create<kttJob>().WithIdentity("Job", "group1")
-                .UsingJobData("Action", _action)
-                .UsingJobData("Uri", _kttUri)
-                .UsingJobData("From", _from.ToString())
-                .UsingJobData("AttServerIp", _attServerIp)
-                .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
+            IJobDetail job2 = JobBuilder.Create<kttJob>().WithIdentity("Job2", "group2")
+             .UsingJobData("Action", _action)
+             .UsingJobData("Uri", _kttUri)
+             .UsingJobData("From", _from.ToString())
+             .UsingJobData("AttServerIp", _attServerIp)
+             .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
 
             ITrigger trigger2 = TriggerBuilder.Create()
-            .WithIdentity("myTrigger", "group1").WithSchedule(
-             CronScheduleBuilder.AtHourAndMinuteOnGivenDaysOfWeek(23, 59, DayOfWeek.Sunday, DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday)).Build();
+            .WithIdentity("myTrigger2", "group2").WithSchedule(
+             CronScheduleBuilder.AtHourAndMinuteOnGivenDaysOfWeek(23, 58, DayOfWeek.Sunday, DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday)).Build();
 
+
+
+            //IJobDetail job3 = JobBuilder.Create<kttJob>().WithIdentity("myJob3", "group3").UsingJobData("Action", _action)
+            // .UsingJobData("Uri", _kttUri)
+            // .UsingJobData("From", _from.ToString())
+            // .UsingJobData("AttServerIp", _attServerIp)
+            // .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
+
+
+            //ITrigger trigger3 = TriggerBuilder.Create()
+            //    .WithIdentity("myTrigger3", "group3")
+            //    .StartNow()
+            //    .WithSimpleSchedule(x => x
+            //        .WithIntervalInMinutes(1)
+            //        .RepeatForever())
+            //    .Build();
+           
+
+
+          //  sched.ScheduleJob(job3, trigger3);
 
             sched.ScheduleJob(job1, trigger1);
 
@@ -93,19 +115,13 @@ namespace KttLogService
         }
 
 
-        private static void InitConfigParams()
+        private void InitConfigParams()
         {
             try
             {
                 if (_action == SYNC_ACTION)
                 {
-
-
-                    if (!DateTime.TryParse(Properties.Settings.Default.from.ToString().Replace('_', ' '), out _from))
-                    {
-                        _from = DateTime.Now;
-                    }
-
+                    _from = Properties.Settings.Default.from;
                     Logger.LoggerInstance.log.Info($"_from: {_from.Date.ToString("yyyy:MM:dd hh:mm:ss")}");
                     #region set servers connection parameters
                     _kttUri = Properties.Settings.Default.ktturi;

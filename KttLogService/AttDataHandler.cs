@@ -67,7 +67,7 @@ namespace KttLogService
             int i = 1;
             foreach (TimeReportRepository item in trrList)
             {
-                string mode = item.InOutMode ? "Out" : "In";
+                string mode = item.InOutMode ? "In" : "Out";
                 Logger.LoggerInstance.log.Info($"Record {i} EnrollNumber {item.EnrollNumber} TimeReport {item.TimeReport}  WorkCode {item.WorkCode} action {mode}");
                 i++;
             }

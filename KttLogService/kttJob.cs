@@ -17,6 +17,8 @@ namespace KttLogService
 
         void IJob.Execute(IJobExecutionContext context)
         {
+            Logger.LoggerInstance.log.Info($"Start to Execute job {context.JobDetail}");
+
             JobDataMap dataMap = context.JobDetail.JobDataMap;
             _action = dataMap.GetString("Action");
             _kttUri = dataMap.GetString("Uri");
