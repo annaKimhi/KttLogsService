@@ -47,7 +47,7 @@ namespace KttLogService
             {
                 Logger.LoggerInstance.log.Info($"Syncronize ATT clock reports with KTT server from { _from.ToString()}");
 
-                Logger.LoggerInstance.log.Info($"Last Sync timestamp from server:  { (Properties.Settings.Default.lastSync !=null ? Properties.Settings.Default.lastSync.ToShortDateString() + " " + Properties.Settings.Default.lastSync.ToShortTimeString() : "UNKNOWN")}");
+                Logger.LoggerInstance.log.Info($"Last Sync timestamp from server:  { (AplicationSettings.lastSync != null ? AplicationSettings.lastSync.ToShortDateString() + " " + AplicationSettings.lastSync.ToShortTimeString() : "UNKNOWN")}");
 
                 Logger.LoggerInstance.log.Info($"Connecting ATT clock...");
 
@@ -70,8 +70,8 @@ namespace KttLogService
             {
                 if (serverLastSync != null)
                 {
-                    Properties.Settings.Default.lastSync = DateTime.Parse(serverLastSync);
-                    Properties.Settings.Default.Save();
+                    AplicationSettings.lastSync = DateTime.Parse(serverLastSync);
+                    AplicationSettings.Save("lastSync", DateTime.Parse(serverLastSync).ToString());
                 }
                 Logger.LoggerInstance.log.Info($"Disconnecting ATT clock...");
 

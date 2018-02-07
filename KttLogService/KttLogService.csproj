@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AplicationSettings.cs" />
     <Compile Include="AttDataHandler.cs" />
     <Compile Include="kttJob.cs" />
     <Compile Include="Logger.cs" />

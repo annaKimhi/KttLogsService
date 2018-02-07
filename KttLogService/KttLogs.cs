@@ -44,7 +44,7 @@ namespace KttLogService
 
                 Logger.LoggerInstance.log.Info("Parsing  args onStart AttLogsService");
 
-                _action = Properties.Settings.Default.Command;
+                _action = AplicationSettings.Command;
 
                 InitConfigParams();
                 BuildJob();
@@ -121,15 +121,15 @@ namespace KttLogService
             {
                 if (_action == SYNC_ACTION)
                 {
-                    _from = Properties.Settings.Default.lastSync;
+                    _from = AplicationSettings.lastSync;
                     Logger.LoggerInstance.log.Info($"_from: {_from.Date.ToString("yyyy:MM:dd hh:mm:ss")}");
                     #region set servers connection parameters
-                    _kttUri = Properties.Settings.Default.ktturi;
-                    _attServerIp = Properties.Settings.Default.attip;
+                    _kttUri = AplicationSettings.ktturi;
+                    _attServerIp = AplicationSettings.attip;
                     IPAddress tmp;
-                    if (!IPAddress.TryParse(_attServerIp, out tmp))
+                    if (!IPAddress.TryParse("192.168.1.7", out tmp))
                         throw new InvalidOperationException("Invalid IP");
-                    else _attServerPort = int.Parse(Properties.Settings.Default.attport);
+                    else _attServerPort = int.Parse(AplicationSettings.attport);
 
                     Logger.LoggerInstance.log.Info($"_kttUri: {_kttUri} _attServerIp:{_attServerIp}");
                     #endregion

@@ -24,16 +24,9 @@ namespace KttLogService
                 //string windowsPath = Environment.GetEnvironmentVariable("windir");
                 //windowsPath = windowsPath + "\\SysWOW64";
                 //Process.Start(windowsPath + "\\regsvr32.exe ", windowsPath + "\\zkemkeeper.dll");
-#if Debug
-                //   var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
-                //   System.Configuration.Configuration config =
-                //ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                //   var a = config.AppSettings.Settings["attport"].Value;
-                //   config.AppSettings.Settings["attport"].Value = "4700";
-                //   config.Save(ConfigurationSaveMode.Modified);
+#if Debug       //   Properties.Settings.Default.Save();
 
-                //   Properties.Settings.Default.Save();
-                 KttLogs t = new KttLogs();
+                KttLogs t = new KttLogs();
                 t.StartDebug();
                 while (true)
                 {
