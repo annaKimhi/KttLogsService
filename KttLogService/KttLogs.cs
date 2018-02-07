@@ -121,7 +121,7 @@ namespace KttLogService
             {
                 if (_action == SYNC_ACTION)
                 {
-                    _from = Properties.Settings.Default.from;
+                    _from = Properties.Settings.Default.lastSync;
                     Logger.LoggerInstance.log.Info($"_from: {_from.Date.ToString("yyyy:MM:dd hh:mm:ss")}");
                     #region set servers connection parameters
                     _kttUri = Properties.Settings.Default.ktturi;

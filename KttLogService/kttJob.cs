@@ -42,12 +42,12 @@ namespace KttLogService
         private void Sync()
         {
             AttDataHandler dataHandler = new AttDataHandler(_kttUri, _attServerIp, _attServerPort);
-            string lastSync = null;
+            string serverLastSync = null;
             try
             {
                 Logger.LoggerInstance.log.Info($"Syncronize ATT clock reports with KTT server from { _from.ToString()}");
 
-                Logger.LoggerInstance.log.Info($"Last Sync timestamp from server:  { (!String.IsNullOrEmpty(Properties.Settings.Default.lastSync) ? Properties.Settings.Default.lastSync : "UNKNOWN")}");
+                Logger.LoggerInstance.log.Info($"Last Sync timestamp from server:  { (Properties.Settings.Default.lastSync !=null ? Properties.Settings.Default.lastSync.ToShortDateString() + " " + Properties.Settings.Default.lastSync.ToShortTimeString() : "UNKNOWN")}");
 
                 Logger.LoggerInstance.log.Info($"Connecting ATT clock...");
 
@@ -59,7 +59,7 @@ namespace KttLogService
                 Logger.LoggerInstance.log.Info($"clock IP: {_attServerIp }, {_attServerPort.ToString()}");
 
                 int res;
-                dataHandler.SyncData(_from, out lastSync, out res);
+                dataHandler.SyncData(_from, out serverLastSync, out res);
                 Logger.LoggerInstance.log.Info(res.ToString() + " records copied");
             }
             catch (Exception ex)
@@ -68,9 +68,9 @@ namespace KttLogService
             }
             finally
             {
-                if (lastSync != null)
+                if (serverLastSync != null)
                 {
-                    Properties.Settings.Default.lastSync = lastSync;
+                    Properties.Settings.Default.lastSync = DateTime.Parse(serverLastSync);
                     Properties.Settings.Default.Save();
                 }
                 Logger.LoggerInstance.log.Info($"Disconnecting ATT clock...");

@@ -25,25 +25,13 @@ namespace KttLogService.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string lastSync {
+        [global::System.Configuration.DefaultSettingValueAttribute("2017-09-16")]
+        public global::System.DateTime lastSync {
             get {
-                return ((string)(this["lastSync"]));
+                return ((global::System.DateTime)(this["lastSync"]));
             }
             set {
                 this["lastSync"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2017-09-15")]
-        public global::System.DateTime from {
-            get {
-                return ((global::System.DateTime)(this["from"]));
-            }
-            set {
-                this["from"] = value;
             }
         }
         

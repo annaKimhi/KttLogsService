@@ -90,6 +90,7 @@ namespace KttLogService
             {
                 var reqparm = new System.Collections.Specialized.NameValueCollection();
                 reqparm.Add("from", from.ToString(@"yyyy-MM-dd HH:mm:ss"));
+                reqparm.Add("to", DateTime.Now.ToString(@"yyyy-MM-dd HH:mm:ss"));
 
                 JArray trrArray = new JArray(
                     trrList.Select(r => new JObject {
@@ -105,7 +106,16 @@ namespace KttLogService
                 reqparm.Add("data", trrArray.ToString());
                 byte[] responsebytes = wc.UploadValues(_kttUri, "POST", reqparm);
                 string responsebody = Encoding.UTF8.GetString(responsebytes);
-                JObject json = JObject.Parse(responsebody);
+                JObject json;
+                try
+                {
+                    json = JObject.Parse(responsebody);
+                }
+                catch (Exception)
+                {
+
+                    throw new InvalidCastException(responsebody.ToString());
+                }
 
 
                 lastSync = json["lastSync"].ToString();
