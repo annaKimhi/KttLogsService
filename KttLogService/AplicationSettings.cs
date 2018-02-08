@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KttLogService
 {
-    static class AplicationSettings
+    static class ApplicationSettings
     {
         public static DateTime lastSync;
         public static string Command;
@@ -15,7 +15,7 @@ namespace KttLogService
         public static string attport;
         public static string ktturi;
         private static Configuration _config;
-        static AplicationSettings()
+        static ApplicationSettings()
         {
             _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             lastSync = DateTime.Parse(_config.AppSettings.Settings["lastSync"].Value);
@@ -23,8 +23,8 @@ namespace KttLogService
             attip = _config.AppSettings.Settings["attip"].Value; 
             attport = _config.AppSettings.Settings["attport"].Value;
             ktturi = _config.AppSettings.Settings["ktturi"].Value;
-            _config.AppSettings.Settings["ktturi"].Value = "http://www.korentec.co.il/kttdebug1";
-            _config.Save(ConfigurationSaveMode.Modified);
+            //_config.AppSettings.Settings["ktturi"].Value = "http://www.korentec.co.il/kttdebug1";
+            //_config.Save(ConfigurationSaveMode.Modified);
         }
 
         public static void Save(string key, string value)
