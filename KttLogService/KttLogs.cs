@@ -62,30 +62,30 @@ namespace KttLogService
             var sched = schedFact.GetScheduler();
             sched.Start();
 
-            IJobDetail job1 = JobBuilder.Create<kttJob>()
-                       .WithIdentity("Job1", "group1")
+            IJobDetail immediateJob = JobBuilder.Create<kttJob>()
+                       .WithIdentity("immediateJob", "immediateGroup")
                        .UsingJobData("Action", _action)
                        .UsingJobData("Uri", _kttUri)
                        .UsingJobData("From", _from.ToString())
                        .UsingJobData("AttServerIp", _attServerIp)
                        .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
 
-            ITrigger trigger1 = TriggerBuilder.Create()
-                       .WithIdentity("myTrigger1", "group1")
+            ITrigger immediateTrigger = TriggerBuilder.Create()
+                       .WithIdentity("immediateTrigger", "immediateGroup")
                        .StartNow()
                        .Build();
 
 
 
-            IJobDetail job2 = JobBuilder.Create<kttJob>().WithIdentity("Job2", "group2")
+            IJobDetail dailyJob = JobBuilder.Create<kttJob>().WithIdentity("dailyJob", "dailyGroup")
              .UsingJobData("Action", _action)
              .UsingJobData("Uri", _kttUri)
              .UsingJobData("From", _from.ToString())
              .UsingJobData("AttServerIp", _attServerIp)
              .UsingJobData("AttServerPort", _attServerPort.ToString()).Build();
 
-            ITrigger trigger2 = TriggerBuilder.Create()
-            .WithIdentity("myTrigger2", "group2").WithSchedule(
+            ITrigger dailyTrigger = TriggerBuilder.Create()
+            .WithIdentity("dailyTrigger", "dailyGroup").WithSchedule(
              CronScheduleBuilder.AtHourAndMinuteOnGivenDaysOfWeek(23, 58, DayOfWeek.Sunday, DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday)).Build();
 
 
@@ -109,9 +109,9 @@ namespace KttLogService
 
           //  sched.ScheduleJob(job3, trigger3);
 
-            sched.ScheduleJob(job1, trigger1);
+            sched.ScheduleJob(immediateJob, immediateTrigger);
 
-            sched.ScheduleJob(job2, trigger2);
+            sched.ScheduleJob(dailyJob, dailyTrigger);
         }
 
 
