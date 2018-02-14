@@ -68,7 +68,7 @@ namespace KttLogService
             foreach (TimeReportRepository item in trrList)
             {
                 string mode = item.InOutMode ? "Out" : "In";
-                Logger.LoggerInstance.log.Info($"Record {i} EnrollNumber {item.EnrollNumber} TimeReport {item.TimeReport}  WorkCode {item.WorkCode} action {mode}");
+                Logger.LoggerInstance.log.Debug($"Record {i} EnrollNumber {item.EnrollNumber} TimeReport {item.TimeReport}  WorkCode {item.WorkCode} action {mode}");
                 i++;
             }
             _axCZKEM1.EnableDevice(_iMachineNumber, true);//enable the device
