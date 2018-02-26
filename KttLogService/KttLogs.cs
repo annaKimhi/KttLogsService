@@ -121,15 +121,15 @@ namespace KttLogService
             {
                 if (_action == SYNC_ACTION)
                 {
-                    _from = ApplicationSettings.lastSync;
+                    _from = ApplicationSettings.LastSync;
                     Logger.LoggerInstance.log.Info($"_from: {_from.Date.ToString("yyyy:MM:dd hh:mm:ss")}");
                     #region set servers connection parameters
-                    _kttUri = ApplicationSettings.ktturi;
-                    _attServerIp = ApplicationSettings.attip;
+                    _kttUri = ApplicationSettings.KttUri;
+                    _attServerIp = ApplicationSettings.AttIp;
                     IPAddress tmp;
                     if (!IPAddress.TryParse("192.168.1.7", out tmp))
                         throw new InvalidOperationException("Invalid IP");
-                    else _attServerPort = int.Parse(ApplicationSettings.attport);
+                    else _attServerPort = int.Parse(ApplicationSettings.AttPort);
 
                     Logger.LoggerInstance.log.Info($"_kttUri: {_kttUri} _attServerIp:{_attServerIp}");
                     #endregion

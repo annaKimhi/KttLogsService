@@ -9,20 +9,21 @@ namespace KttLogService
 {
     static class ApplicationSettings
     {
-        public static DateTime lastSync;
+        public static DateTime LastSync;
         public static string Command;
-        public static string attip;
-        public static string attport;
-        public static string ktturi;
+        public static string AttIp;
+        public static string AttPort;
+        public static string KttUri;
         private static Configuration _config;
         static ApplicationSettings()
         {
             _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            lastSync = DateTime.Parse(_config.AppSettings.Settings["lastSync"].Value);
+
+            DateTime.TryParse(_config.AppSettings.Settings["lastSync"].Value, out LastSync);
             Command = _config.AppSettings.Settings["Command"].Value; 
-            attip = _config.AppSettings.Settings["attip"].Value; 
-            attport = _config.AppSettings.Settings["attport"].Value;
-            ktturi = _config.AppSettings.Settings["ktturi"].Value;
+            AttIp = _config.AppSettings.Settings["attip"].Value; 
+            AttPort = _config.AppSettings.Settings["attport"].Value;
+            KttUri = _config.AppSettings.Settings["ktturi"].Value;
             //_config.AppSettings.Settings["ktturi"].Value = "http://www.korentec.co.il/kttdebug1";
             //_config.Save(ConfigurationSaveMode.Modified);
         }
