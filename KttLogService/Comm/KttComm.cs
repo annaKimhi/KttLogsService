@@ -72,7 +72,7 @@ namespace KTT.Comm
                         { "timestamp", timeStamp },
                         { "att_id", r.EnrollNumber},
                         { "date", r.TimeReport.ToString("yyyy-MM-dd") },
-                        { "time", r.TimeReport.ToString("HH:mm:ss") },
+                        { "time", r.TimeReport.ToString("HH:mm") },
                         { "in_out", r.InOutMode }
                     })
                 );
