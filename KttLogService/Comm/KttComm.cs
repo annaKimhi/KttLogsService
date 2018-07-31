@@ -105,7 +105,7 @@ namespace KTT.Comm
                 }
 
                 JToken token = json["lastSync"];
-                if (token == null || !token.HasValues)
+                if (token == null || !json.ContainsKey("lastSync"))
                 {
                     Logger.LoggerInstance.log.Error("server did not return last time sync");
                     throw new Exception("server did not return last time sync");
