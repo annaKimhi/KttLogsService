@@ -1,4 +1,4 @@
-﻿namespace KttLogService
+﻿namespace KTT.Services
 {
     partial class KttLogs
     {

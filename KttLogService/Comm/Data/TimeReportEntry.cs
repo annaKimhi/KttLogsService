@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KttLogService
+namespace KTT.Comm.Data
 {
-    public struct TimeReportRepository
+    public struct TimeReportEntry
     {
         public int EnrollNumber { get; set; }
         public int VerifyMode { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace KttLogService
+﻿namespace KTT.Install
 {
     partial class ProjectInstaller
     {
