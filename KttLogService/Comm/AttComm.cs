@@ -136,7 +136,7 @@ namespace KTT.Comm
             {
                 DateTime timeReport = new DateTime(year, month, day, hour, minute, second);
 
-                if (DateTime.Compare(timeReport, from) >= 0)
+                if (DateTime.Compare(timeReport, from) > 0)
                 {
                     return new TimeReportEntry()
                     {
