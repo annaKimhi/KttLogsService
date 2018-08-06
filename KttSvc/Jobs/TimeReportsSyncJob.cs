@@ -9,46 +9,45 @@ using System.Threading.Tasks;
 
 namespace KTT.Jobs
 {
-   internal class TimeReportsSyncJob : IJob
+   public class TimeReportsSyncJob : IJob
     {
         Task IJob.Execute(IJobExecutionContext context)
         {
-            Logger .LoggerInstance.log.Info($"Start to Execute job {context.JobDetail}");
-            JobDataMap dataMap = context.JobDetail.JobDataMap;
-            return Task.Factory.StartNew((v) => { SyncData((JobDataMap)v); }, dataMap);
+            Logger.Instance.log.Info($"Start to Execute job {context.JobDetail}");
+            //JobDataMap dataMap = context.JobDetail.JobDataMap;
+            return Task.Factory.StartNew(SyncData);
         }
 
-        //Download the attendance records from the device(For both Black&White and TFT screen devices).
-        private void SyncData(JobDataMap args)
+        public void SyncData()
         {
-            Logger.LoggerInstance.log.Info($"Time Reports Synchronization Start");
+            Logger.Instance.log.Info($"Time Reports Synchronization Start");
             DateTime from;
             IList<TimeReportEntry> reports;
             try
             {
                 from = KttComm.LastSynced();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Logger.LoggerInstance.log.Info($"failed to retreive last sync time, operation cancled", ex);
+                Logger.Instance.log.Info($"failed to retreive last sync time, operation cancled", ex);
                 return;
             }
-            
-            Logger.LoggerInstance.log.Info($"Connecting ATT clock...");
+
+            Logger.Instance.log.Info($"Connecting ATT clock...");
 
             AttComm att = new AttComm();
-            
+
             try
             {
                 att.Connect();
             }
             catch (Exception ex)
             {
-                Logger.LoggerInstance.log.Error($"connection error to clock, operation cancled", ex);
+                Logger.Instance.log.Error($"connection error to clock, operation cancled", ex);
                 return;
             }
 
-            Logger.LoggerInstance.log.Info($"retreiveing time reports from: { from.ToString("dd/MM/yyyy HH:mm:ss")}");
+            Logger.Instance.log.Info($"retreiveing time reports from: { from.ToString("dd/MM/yyyy HH:mm:ss")}");
 
             try
             {
@@ -56,7 +55,7 @@ namespace KTT.Jobs
             }
             catch (Exception ex)
             {
-                Logger.LoggerInstance.log.Error($"read time reports from clock failed", ex);
+                Logger.Instance.log.Error($"read time reports from clock failed", ex);
                 return;
             }
             finally
@@ -67,12 +66,20 @@ namespace KTT.Jobs
                 }
                 catch (Exception ex)
                 {
-                    Logger.LoggerInstance.log.Warn($"failed to disconnect from clock", ex);
+                    Logger.Instance.log.Warn($"failed to disconnect from clock", ex);
                 }
             }
 
+            
 
-            Logger.LoggerInstance.log.Info($"retrieved {reports.Count} from clock");
+            if (reports.Count == 0)
+            {
+                Logger.Instance.log.Info($"no new reports since {from.ToString("dd/MM/yyyy HH:mm:ss")} found");
+                return;
+            }
+
+            Logger.Instance.log.Info($"retrieved {reports.Count} from clock");
+
             StringBuilder reportsStr = new StringBuilder();
             for (int i = 0; i < reports.Count; i++)
             {
@@ -81,17 +88,17 @@ namespace KTT.Jobs
                 reportsStr.AppendLine($"Record {i} EnrollNumber {item.EnrollNumber} TimeReport {item.TimeReport}  WorkCode {item.WorkCode} action {mode}");
             }
 
-            Logger.LoggerInstance.log.Debug(reportsStr.ToString());
+            Logger.Instance.log.Debug(reportsStr.ToString());
 
-            Logger.LoggerInstance.log.Info($"updating KTT time reports");
+            Logger.Instance.log.Info($"updating KTT time reports");
 
             try
             {
                 from = KttComm.UpdateReports(DateTime.Now, reports);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Logger.LoggerInstance.log.Error($"failed to update KTT time reports", ex);
+                Logger.Instance.log.Error($"failed to update KTT time reports", ex);
             }
         }
     }

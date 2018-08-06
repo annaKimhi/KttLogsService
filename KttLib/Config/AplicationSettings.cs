@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace KTT.Config
 {
-    static class ApplicationSettings
+    public static class ApplicationSettings
     {
         private static Configuration _config;
         static ApplicationSettings()

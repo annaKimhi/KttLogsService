@@ -1,5 +1,4 @@
 ﻿using KTT.Config;
-using KTT.Logging;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Collections.Specialized;
 
 namespace KTT.Comm
 {
-    class KttComm
+    public class KttComm
     {
         private static Uri NormilizeUri(Uri uri)
         {
@@ -29,22 +28,12 @@ namespace KTT.Comm
             {
                 byte[] responsebytes = wc.DownloadData(uri);
                 string responsebody = Encoding.UTF8.GetString(responsebytes);
-                JObject json;
-                try
-                {
-                    json = JObject.Parse(responsebody);
-                }
-                catch (Exception ex)
-                {
-                    Logger.LoggerInstance.log.Error("failed to retreive last sync time stamp", ex);
-                    throw new InvalidCastException(responsebody.ToString());
-                }
+                JObject json = JObject.Parse(responsebody);
 
                 bool success = json["success"].ToObject<bool>();
                 if (!success)
                 {
                     Exception err = new Exception(json["errors"].ToString());
-                    Logger.LoggerInstance.log.Error("failed to retreive last sync time stamp", err);
                     throw err;
                 }
 
@@ -98,18 +87,11 @@ namespace KTT.Comm
 
                 bool success = json["success"].ToObject<bool>();
                 if (!success)
-                {
-                    Exception err = new Exception(json["errors"].ToString());
-                    Logger.LoggerInstance.log.Error("failed to push time reports", err);
-                    throw err;
-                }
+                    throw new Exception(json["errors"].ToString()); ;
 
                 JToken token = json["lastSync"];
                 if (token == null || !json.ContainsKey("lastSync"))
-                {
-                    Logger.LoggerInstance.log.Error("server did not return last time sync");
                     throw new Exception("server did not return last time sync");
-                }
 
                 return token.Value<DateTime>();
             }

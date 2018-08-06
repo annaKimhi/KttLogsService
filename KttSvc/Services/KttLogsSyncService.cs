@@ -1,37 +1,40 @@
-﻿using KTT.Config;
-using KTT.Jobs;
+﻿using KTT.Jobs;
 using KTT.Logging;
 using Quartz;
 using Quartz.Impl;
 using System;
-using System.Net;
 using System.ServiceProcess;
 using System.Threading.Tasks;
 
 namespace KTT.Services
 {
-    partial class KttLogs : ServiceBase
+
+    public delegate void ShutDownEventHandler();
+
+    class KttLogsSyncService : ServiceBase
     {
-        public KttLogs()
+        public event ShutDownEventHandler ShuttingDown;
+
+        public KttLogsSyncService()
         {
-            InitializeComponent();
+            this.ServiceName = "KTT Synchronizer";
         }
 
-        internal void StartDebug()
+        public void Start(string[] args)
         {
-            OnStart(null);
+            this.OnStart(args);
         }
+
         protected override void OnStart(string[] args)
         {
             try
             {
-
-                Logger.LoggerInstance.log.Info("Parsing  args onStart AttLogsService");
+                Logger.Instance.log.Info("Parsing  args onStart AttLogsService");
                 BuildJob();
             }
             catch (Exception ex)
             {
-                Logger.LoggerInstance.log.Error($"Failed to parse args due to Exception: {ex}");
+                Logger.Instance.log.Error($"Failed to parse args due to Exception: {ex}");
             }
 
         }
@@ -53,7 +56,7 @@ namespace KTT.Services
             IJobDetail dailyTimeReportsSyncJob = JobBuilder.Create<TimeReportsSyncJob>()
                                             .WithIdentity("dailyTimeReportsSync", "timeReportsSync")
                                             .Build();
-             
+
 
             ITrigger dailyTimeReportsSyncTrigger = TriggerBuilder.Create()
                                                   .WithIdentity("dailyTimeReportsSync", "timeReportsSync")
@@ -66,7 +69,12 @@ namespace KTT.Services
 
         protected override void OnStop()
         {
-            // TODO: Add code here to perform any tear-down necessary to stop your service.
+            
+        }
+
+        protected override void OnShutdown()
+        {
+            ShuttingDown?.Invoke();
         }
     }
 }

@@ -1,10 +1,8 @@
 ﻿using KTT.Comm.Data;
 using KTT.Config;
-using KTT.Logging;
 using System;
 using System.Collections.Generic;
 using zkemkeeper;
-using System.Linq;
 
 namespace KTT.Comm
 {
@@ -18,7 +16,7 @@ namespace KTT.Comm
         GenLogs = 6
     }
 
-    class AttComm
+    public class AttComm
     {
         //Create Standalone SDK class dynamicly.
         private CZKEMClass _axCZKEM1;
@@ -63,7 +61,7 @@ namespace KTT.Comm
         }
 
         //Download the attendance records from the device(For both Black&White and TFT screen devices).
-        internal IList<TimeReportEntry> ReadTimeReports(DateTime from)
+        public IList<TimeReportEntry> ReadTimeReports(DateTime from)
         {
             if (_bIsConnected == false)
             {
@@ -78,9 +76,8 @@ namespace KTT.Comm
             try
             {
                 trrList = ReadTimeReportsInternal(from);
-                Logger.LoggerInstance.log.Debug($"Retrived {trrList.Count} records from Date {from}");
             }
-            catch(Exception ex)
+            catch
             {
                 throw;
             }
@@ -91,9 +88,6 @@ namespace KTT.Comm
                     throw new Exception("Unable to enable device");
                 }
             }
-
-            if (trrList.Count == 0)
-                throw new Exception("No records to sync found in att");
 
             return trrList;
         }

@@ -2,7 +2,7 @@
 
 namespace KTT.Comm
 {
-    class SearchforUSBCom
+    public class SearchforUSBCom
     {
         //Search for the virtual serial port created by usbclient.
         public bool SearchforCom(ref string sCom)//modify by Darcy on Nov.26 2009
