@@ -15,8 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_036F0F7C22F1157CA6C985DDAB447E23"
+        "MsmKey" = "8:_07112A9305728D0F7168F455D8197CA1"
         "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_077C2B401B16BBF3AC2135043F7ED7E3"
+        "OwnerKey" = "8:_E2BFB520EC16FC5D5AC6A97C2027BE3A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -33,20 +39,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2795EA562D8B7008B725BDED0A190CB8"
-        "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2EB09BE2639443FB967846EDA7753634"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4665E6D5657F7102E7E9C613F1319AC8"
-        "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -87,13 +81,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8B68209447EA034859A5BEE573D619A5"
-        "OwnerKey" = "8:_036F0F7C22F1157CA6C985DDAB447E23"
+        "MsmKey" = "8:_7F7E55F2CEB0927FA04691BF6638E1A4"
+        "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8B68209447EA034859A5BEE573D619A5"
+        "MsmKey" = "8:_9F0F5BA7DDF76ABF87392C472E181580"
+        "OwnerKey" = "8:_7F7E55F2CEB0927FA04691BF6638E1A4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9F0F5BA7DDF76ABF87392C472E181580"
         "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -129,20 +129,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CEAB7F8ED53B06F3108964D1785A9693"
+        "MsmKey" = "8:_D19AAFBF47AE4557A72D4AA1E8A7E537"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D3F791E28A6EF05A5F215D93310AF28C"
         "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_CEAB7F8ED53B06F3108964D1785A9693"
-        "OwnerKey" = "8:_036F0F7C22F1157CA6C985DDAB447E23"
+        "MsmKey" = "8:_E2BFB520EC16FC5D5AC6A97C2027BE3A"
+        "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D19AAFBF47AE4557A72D4AA1E8A7E537"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_E2BFB520EC16FC5D5AC6A97C2027BE3A"
+        "OwnerKey" = "8:_7F7E55F2CEB0927FA04691BF6638E1A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -153,12 +159,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F86FE2DB5E73A8CC7AB13945B360149E"
-        "OwnerKey" = "8:_CEAB7F8ED53B06F3108964D1785A9693"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6522A47F7CCD41BBB1BAEABB3C18C02C"
         "MsmSig" = "8:_UNDEFINED"
@@ -166,31 +166,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4665E6D5657F7102E7E9C613F1319AC8"
+        "OwnerKey" = "8:_07112A9305728D0F7168F455D8197CA1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2795EA562D8B7008B725BDED0A190CB8"
+        "OwnerKey" = "8:_D3F791E28A6EF05A5F215D93310AF28C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_036F0F7C22F1157CA6C985DDAB447E23"
+        "OwnerKey" = "8:_7F7E55F2CEB0927FA04691BF6638E1A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8B68209447EA034859A5BEE573D619A5"
+        "OwnerKey" = "8:_9F0F5BA7DDF76ABF87392C472E181580"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CEAB7F8ED53B06F3108964D1785A9693"
+        "OwnerKey" = "8:_E2BFB520EC16FC5D5AC6A97C2027BE3A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -378,21 +378,41 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_036F0F7C22F1157CA6C985DDAB447E23"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_07112A9305728D0F7168F455D8197CA1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:KttLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:Quartz, Version=3.0.6.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_036F0F7C22F1157CA6C985DDAB447E23"
+                    "_07112A9305728D0F7168F455D8197CA1"
                     {
-                    "Name" = "8:KttLib.dll"
+                    "Name" = "8:Quartz.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:KttLib.dll"
+            "SourcePath" = "8:Quartz.dll"
             "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_077C2B401B16BBF3AC2135043F7ED7E3"
+            {
+            "SourcePath" = "8:zkemkeeper.dll"
+            "TargetName" = "8:zkemkeeper.dll"
             "Tag" = "8:"
             "Folder" = "8:_94D836319E0348849FD12F607CB57317"
             "Condition" = "8:"
@@ -449,37 +469,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2795EA562D8B7008B725BDED0A190CB8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2795EA562D8B7008B725BDED0A190CB8"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:log4net.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2EB09BE2639443FB967846EDA7753634"
             {
             "SourcePath" = "8:..\\packages\\zkemkeeper\\x86\\usbcomm.dll"
@@ -498,37 +487,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4665E6D5657F7102E7E9C613F1319AC8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Quartz, Version=3.0.6.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4665E6D5657F7102E7E9C613F1319AC8"
-                    {
-                    "Name" = "8:Quartz.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Quartz.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_48A07498A6354BEC96875E09EF77E202"
@@ -631,14 +589,45 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B68209447EA034859A5BEE573D619A5"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F7E55F2CEB0927FA04691BF6638E1A4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:KttLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_7F7E55F2CEB0927FA04691BF6638E1A4"
+                    {
+                    "Name" = "8:KttLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:KttLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9F0F5BA7DDF76ABF87392C472E181580"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8B68209447EA034859A5BEE573D619A5"
+                    "_9F0F5BA7DDF76ABF87392C472E181580"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -773,14 +762,65 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CEAB7F8ED53B06F3108964D1785A9693"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D19AAFBF47AE4557A72D4AA1E8A7E537"
+            {
+            "SourcePath" = "8:..\\packages\\zkemkeeper\\x86\\commpro.dll"
+            "TargetName" = "8:commpro.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_20E9A22AB53643F49CA4440DA5D0969A"
+            "Condition" = "8:not COMMPRO.DLL"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:TRUE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D3F791E28A6EF05A5F215D93310AF28C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D3F791E28A6EF05A5F215D93310AF28C"
+                    {
+                    "Name" = "8:log4net.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:log4net.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E2BFB520EC16FC5D5AC6A97C2027BE3A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Interop.zkemkeeper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CEAB7F8ED53B06F3108964D1785A9693"
+                    "_E2BFB520EC16FC5D5AC6A97C2027BE3A"
                     {
                     "Name" = "8:Interop.zkemkeeper.dll"
                     "Attributes" = "3:512"
@@ -804,26 +844,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D19AAFBF47AE4557A72D4AA1E8A7E537"
-            {
-            "SourcePath" = "8:..\\packages\\zkemkeeper\\x86\\commpro.dll"
-            "TargetName" = "8:commpro.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_20E9A22AB53643F49CA4440DA5D0969A"
-            "Condition" = "8:not COMMPRO.DLL"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:TRUE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED38ED5A35BD40DCAA645D68FA9A441D"
             {
             "SourcePath" = "8:..\\packages\\zkemkeeper\\x86\\tcpcomm.dll"
@@ -842,26 +862,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F86FE2DB5E73A8CC7AB13945B360149E"
-            {
-            "SourcePath" = "8:zkemkeeper.dll"
-            "TargetName" = "8:zkemkeeper.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_94D836319E0348849FD12F607CB57317"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -1126,15 +1126,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KTT Sync Service"
-        "ProductCode" = "8:{704E9767-E52A-4946-8EEB-CFF7FC7B51A0}"
-        "PackageCode" = "8:{DC445E7D-6451-443E-94A1-444C9CA32DCF}"
+        "ProductCode" = "8:{4886D647-0299-42FD-BA3E-97BC31BF9179}"
+        "PackageCode" = "8:{33C33B94-5463-469E-BFCB-214D4C08F706}"
         "UpgradeCode" = "8:{FC9F07DD-FA6E-4A0C-BFEA-15EB6523AE88}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.2.0"
         "Manufacturer" = "8:Korentec"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1648,7 +1648,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6522A47F7CCD41BBB1BAEABB3C18C02C"
             {
-            "SourcePath" = "8:..\\KttSvc\\obj\\x86\\Debug\\KttSvc.exe"
+            "SourcePath" = "8:..\\KttSvc\\obj\\x86\\Release\\KttSvc.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_94D836319E0348849FD12F607CB57317"
