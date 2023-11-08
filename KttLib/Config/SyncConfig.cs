@@ -14,9 +14,9 @@ namespace KTT.Config
 
         static SyncConfig()
         {
-            _ATT_IPProperty = new ConfigurationProperty("ATT_IP", typeof(string), "192.168.1.7", null, null, ConfigurationPropertyOptions.IsRequired, "last time of synchonization");
+            _ATT_IPProperty = new ConfigurationProperty("ATT_IP", typeof(string), "10.10.90.220", null, null, ConfigurationPropertyOptions.IsRequired, "last time of synchonization");
             _ATT_PortProperty = new ConfigurationProperty("ATT_Port", typeof(string), "4370", null, null, ConfigurationPropertyOptions.IsRequired, "last time of synchonization");
-            _KTT_URIProperty = new ConfigurationProperty("KTT_URI", typeof(string), "http://www.korentec.co.il/kttdebug", null, null, ConfigurationPropertyOptions.IsRequired, "last time of synchonization");
+            _KTT_URIProperty = new ConfigurationProperty("KTT_URI", typeof(string), "https://ktt.korentec.co.il", null, null, ConfigurationPropertyOptions.IsRequired, "last time of synchonization");
             
             // Initialize the Property collection.
             _Properties = new ConfigurationPropertyCollection();

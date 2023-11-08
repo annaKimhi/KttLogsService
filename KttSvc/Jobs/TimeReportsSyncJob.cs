@@ -26,6 +26,7 @@ namespace KTT.Jobs
             try
             {
                 from = KttComm.LastSynced();
+               
             }
             catch (Exception ex)
             {
